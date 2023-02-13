@@ -26,7 +26,7 @@ public class WebController {
     }
 
     @GetMapping("/findById/{id}")
-    public Optional<Comic> findById(@PathVariable Long id) {
+    public Optional<Comic> findById(Long id) {
         return csi.findById(id);
     }
 
@@ -36,7 +36,7 @@ public class WebController {
     }
 
     @DeleteMapping("/deleteComic/{id}")
-    public String deleteComic(Long id) {
+    public String deleteComic(@PathVariable Long id) {
         csi.deleteComic(id);
         return "Borrado con exito.";
     }

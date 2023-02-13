@@ -30,11 +30,10 @@ public class ComicServiceImp implements ComicService{
 
     @Override
     public Comic updateComic(Long id, Comic comic) {
-        if(cr.findById(id)==null){
+        if(cr.findById(id).isPresent()){
             cr.save(comic);
-            return comic;
         }
-        return null;
+        return comic;
     }
 
     @Override
